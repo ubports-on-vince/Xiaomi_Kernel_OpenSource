@@ -52,7 +52,6 @@ static char rt_ert_flag;
 static char formatting_dir;
 static unsigned char sig_blend = CTRL_ON;
 static DEFINE_MUTEX(iris_fm);
-DEFINE_MUTEX(fm_smd_enable);
 
 module_param(rds_buf, uint, 0);
 MODULE_PARM_DESC(rds_buf, "RDS buffer entries: *100*");
