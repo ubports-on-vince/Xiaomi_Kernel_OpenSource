@@ -40,7 +40,6 @@ static struct ipc_namespace *create_ipc_ns(struct user_namespace *user_ns,
 	}
 	err = mq_init_ns(ns);
 	if (err) {
-		exit_peripc_ns(ns);
 		proc_free_inum(ns->proc_inum);
 		exit_peripc_ns(ns);
 		kfree(ns);
