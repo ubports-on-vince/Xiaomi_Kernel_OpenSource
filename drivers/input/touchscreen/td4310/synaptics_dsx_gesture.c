@@ -1498,9 +1498,9 @@ static void udg_report(void)
 		rmi4_data->gesture_detection[0] = 0;
 
 		if (udg->detection_status == DETECTION) {
-			input_report_key(udg->udg_dev, KEY_POWER, 1);
+			input_report_key(udg->udg_dev, KEY_WAKEUP, 1);
 			input_sync(udg->udg_dev);
-			input_report_key(udg->udg_dev, KEY_POWER, 0);
+			input_report_key(udg->udg_dev, KEY_WAKEUP, 0);
 			input_sync(udg->udg_dev);
 			rmi4_data->suspend = false;
 		}
@@ -2041,8 +2041,8 @@ static int synaptics_rmi4_udg_init(struct synaptics_rmi4_data *rmi4_data)
 	input_set_drvdata(udg->udg_dev, rmi4_data);
 
 	set_bit(EV_KEY, udg->udg_dev->evbit);
-	set_bit(KEY_POWER, udg->udg_dev->keybit);
-	input_set_capability(udg->udg_dev, EV_KEY, KEY_POWER);
+	set_bit(KEY_WAKEUP, udg->udg_dev->keybit);
+	input_set_capability(udg->udg_dev, EV_KEY, KEY_WAKEUP);
 
 	retval = input_register_device(udg->udg_dev);
 	if (retval) {
