@@ -61,10 +61,10 @@
 #define MAX_NICE 20
 #endif
 
-static inline long rlimit_to_nice(long prio)
-{
-	return (MAX_NICE - prio + 1);
-}
+//static inline long rlimit_to_nice(long prio)
+//{
+//	return (MAX_NICE - prio + 1);
+//}
 
 /* Until I upstream a better version of this patch choose an arbitrary major
  * number in the high end spectrum that has not yet been given away and is
