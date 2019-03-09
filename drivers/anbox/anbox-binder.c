@@ -57,7 +57,9 @@
 //#define BINDER_IPC_32BIT 1
 //#endif
 
+#ifndef MAX_NICE
 #define MAX_NICE 20
+#endif
 
 static inline long rlimit_to_nice(long prio)
 {
